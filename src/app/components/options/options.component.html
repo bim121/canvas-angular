@@ -1,0 +1,35 @@
+<div class="options">
+    <div *ngIf="selectedFigure && selectedFigure !== 'handle'">
+        <h3>Figure Properties</h3>
+        <div *ngIf="selectedFigure !== 'image' && selectedFigure !== 'text'">
+            <div class="inputs">
+                <label>Background Color:</label>
+                <input type="color" [(ngModel)]="backgroundColor" (change)="onPropertiesChanged()">
+              </div>
+              <div class="inputs" *ngIf="selectedFigure !== 'horizontal'">
+                <label>Border Color:</label>
+                <input type="color" [(ngModel)]="borderColor" (change)="onPropertiesChanged()">
+              </div>
+        </div>
+        <div class="inputs">
+          <label>Width:</label>
+          <input type="number" [(ngModel)]="width" (change)="onPropertiesChanged()">
+        </div>
+        <div *ngIf="selectedFigure !== 'horizontal' && selectedFigure !== 'rectangle'"class="inputs">
+          <label>Height:</label>
+          <input type="number" [(ngModel)]="height" (change)="onPropertiesChanged()">
+        </div>
+        <div *ngIf="selectedFigure === 'text' " class="inputs">
+            <label>Text</label>
+            <input type="text" [(ngModel)]="text" (change)="onPropertiesChanged()">
+        </div>
+        <div *ngIf="selectedFigure === 'text' " class="inputs">
+            <label>Text color</label>
+            <input type="color" [(ngModel)]="textColor" (change)="onPropertiesChanged()">
+        </div>
+        <div *ngIf="selectedFigure === 'image' " class="inputs">
+            <label>Src:</label>
+            <input type="file" [(ngModel)]="file" (change)="onFileSelected($event)">
+        </div>
+    </div>
+</div>

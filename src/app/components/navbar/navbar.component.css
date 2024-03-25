@@ -1,0 +1,12 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+    padding-top: 30px;
+    background-color: #f0f0f0;
+}
+
+.svg-image{
+    margin-bottom: 25px;
+}

@@ -1,0 +1,5 @@
+<div class="sidebar" *ngFor="let element of elements" (click)="selectElement(element)">
+    <div [appSelectable]="element.isSelected" class="svg-image">
+        <img [src]="element.src" width="40" alt="SVG Image">
+    </div>
+</div>

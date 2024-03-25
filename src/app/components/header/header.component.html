@@ -1,0 +1,25 @@
+<div>
+    <nb-user
+      *ngIf="isLoggedIn()"
+      name="{{ username }}"
+      style="display: inline-block"
+    ></nb-user>
+    <button
+      *ngIf="isLoggedIn()"
+      nbButton
+      (click)="onLogoutClick()"
+      style="margin-left: 2rem"
+    >
+    {{"logout" | translate}}
+    </button>
+    <nb-user
+      *ngIf="!isLoggedIn()"
+      name="Unknown"
+      style="display: inline-block"
+    ></nb-user>
+  </div>
+  
+  <div class="title">
+    <button (click)="changeLanguage('uk')">Uk</button>
+    <button (click)="changeLanguage('en')">En</button>
+  </div>
